@@ -19,7 +19,30 @@ for row in csv_reader:
         candidates.append(row[2])
         count=0
         count = count +1 
-    
 
+
+
+
+
+print("Election Results")   
+print("-------------------------")
+print("Total Votes :" + str(count))    
+print("-------------------------")
+for i in range(len(candidates)):
+            print(candidates[i] + ": " + str(votes[i]) +"% (" + str(votes[i])+ ")")
+print("-------------------------")
+print("The winner is: " + winner)
+print("-------------------------")
+
+with open('analysis.txt', 'w') as text:
+    text.write("Election Results")
+    text.write("-----------------------------")
+    text.write("Total Vote: " + str(count))
+    text.write("-----------------------------")
+    for i in range(len(set(candidates))):
+        text.write(candidates[i] + ": " + str(votes[i]) +"% (" + str(votes[i]) + "))
+    text.write("-----------------------------")
+    text.write("The winner is: " + winner )
+    text.write("-----------------------------")
 
 
